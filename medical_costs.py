@@ -1,7 +1,7 @@
 import csv
 # CSV-Datei öffnen und Daten in Listen speichern
 
-# Listen für jede Spalte
+# List for each column
 age = []
 sex = []
 bmi = []
@@ -10,7 +10,7 @@ smoker = []
 region = []
 charges = []
 
-# CSV-Datei öffnen und Daten in Listen speichern
+# open CSV file and save each column in a list
 with open('insurance.csv') as insurance_costs:
     insurance_costs_data = csv.reader(insurance_costs) 
     header = next(insurance_costs_data) # Kopfzeile überspringen (falls vorhanden)
@@ -24,7 +24,15 @@ with open('insurance.csv') as insurance_costs:
         region.append(row[5])
         charges.append(row[6])
 
-# Zum Testen die ersten Datenpunkte ausgeben
+# Overview
 print(sex[:5])
 print(age[:5])
-# ... und so weiter für die restlichen Spalten
+print(bmi[:5])
+print(children[:5])
+print(smoker[:5])
+print(region[:5])
+print(charges[:5])
+
+# Average Age of the patients
+average_age = sum([int(i) for i in age]) / len(age)
+print("Average age of the patients: " + str(round(average_age, 2)) + " years")
