@@ -40,3 +40,7 @@ print("Average age of the patients: " + str(round(average_age, 2)) + " years")
 # Average BMI of the patients
 average_bmi = sum([float(i) for i in bmi]) / len(bmi)
 print("Average BMI of the patients: " + str(round(average_bmi, 2)))
+
+# Average number of children of the patients
+average_children = sum([int(i) for i in children]) / len(children)
+print("Average number of children of the patients: "+str(round(average_children, 2))+ ' children')
