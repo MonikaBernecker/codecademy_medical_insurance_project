@@ -36,3 +36,7 @@ print(charges[:5])
 # Average Age of the patients
 average_age = sum([int(i) for i in age]) / len(age)
 print("Average age of the patients: " + str(round(average_age, 2)) + " years")
+
+# Average BMI of the patients
+average_bmi = sum([float(i) for i in bmi]) / len(bmi)
+print("Average BMI of the patients: " + str(round(average_bmi, 2)))
