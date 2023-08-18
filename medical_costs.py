@@ -44,3 +44,15 @@ print("Average BMI of the patients: " + str(round(average_bmi, 2)))
 # Average number of children of the patients
 average_children = sum([int(i) for i in children]) / len(children)
 print("Average number of children of the patients: "+str(round(average_children, 2))+ ' children')
+
+# The most common region of origin
+origin= {}
+for r in region:
+    if r in origin:
+        origin[r] += 1
+    else:
+        origin[r] = 1
+
+most_common_origin = max(origin, key=origin.get)
+print("The most common region of origin is: ", most_common_origin)
+
