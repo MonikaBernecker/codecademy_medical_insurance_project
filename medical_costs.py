@@ -60,3 +60,16 @@ print("The most common region of origin is: ", most_common_origin)
 average_cost = sum([float(i) for i in charges]) / len(charges)
 print("Average cost:",  str(round(average_cost, 2)))
 
+#Gender distribution
+distribution = {}
+for s in sex:
+    if s in distribution:
+        distribution[s] += 1
+    else:
+        distribution[s] = 1
+    
+most_common_gender = max(distribution, key=distribution.get) 
+print('Most Common Gender:', most_common_gender )
+
+
+
