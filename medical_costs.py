@@ -82,5 +82,16 @@ for s, c in zip(smoker, children):
 percentage = (smoker_with_children/all_smoker)*100
 print(str(round(percentage, 1)) + " of the smokers have children")
 
+# In which region are the highest costs?
+costs_per_region = {}
+for r, cost in zip(region, charges):
+    if r not in costs_per_region:
+        costs_per_region[r] = 0
+    costs_per_region[r] += float(cost)
+region_with_highest_costs = max(costs_per_region, key=costs_per_region.get)
+print("The region with the highest costs is: " + str(region_with_highest_costs))
+print("Total cost: " + str(round(costs_per_region[region_with_highest_costs])))
+    
+
 
 
