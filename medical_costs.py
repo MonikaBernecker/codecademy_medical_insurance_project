@@ -71,5 +71,16 @@ for s in sex:
 most_common_gender = max(distribution, key=distribution.get) 
 print('Most Common Gender:', most_common_gender )
 
+#Percantage of smokers with children
+all_smoker = 0
+smoker_with_children = 0
+for s, c in zip(smoker, children):
+    if s == "yes":
+        all_smoker += 1
+        if int(c) > 0:
+            smoker_with_children += 1
+percentage = (smoker_with_children/all_smoker)*100
+print(str(round(percentage, 1)) + " of the smokers have children")
+
 
 
