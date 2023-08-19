@@ -56,3 +56,7 @@ for r in region:
 most_common_origin = max(origin, key=origin.get)
 print("The most common region of origin is: ", most_common_origin)
 
+#Average cost
+average_cost = sum([float(i) for i in charges]) / len(charges)
+print("Average cost:",  str(round(average_cost, 2)))
+
