@@ -156,3 +156,27 @@ def percentage_of_smokers_with_children(smoker, children):
         smokers_with_children += 1
   percentage = (smokers_with_children / all_smokers) * 100
   return percentage
+
+# Age with the highest costs
+def get_age_with_highest_cost(age, cost):
+  """
+  This function returns the age with the highest cost.
+
+  Args:
+    age: A list of ages.
+    cost: A list of costs.
+
+  Returns:
+    The age with the highest cost.
+  """
+
+  costs_per_age = {}
+  for a, q in zip(age, cost):
+    if a not in costs_per_age:
+      costs_per_age[a] = 0
+    try:
+      costs_per_age[a] += float(q)
+    except ValueError:
+      print(f"Unable to convert {q} to float.")
+  age_with_the_highest_cost = max(costs_per_age, key=costs_per_age.get)
+  return age_with_the_highest_cost

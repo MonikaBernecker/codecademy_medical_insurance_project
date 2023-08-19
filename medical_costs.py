@@ -91,7 +91,16 @@ for r, cost in zip(region, charges):
 region_with_highest_costs = max(costs_per_region, key=costs_per_region.get)
 print("The region with the highest costs is: " + str(region_with_highest_costs))
 print("Total cost: " + str(round(costs_per_region[region_with_highest_costs])))
-    
 
-
+#At which age have patients the highest costs?
+costs_per_age = {}
+for a, q in zip(age, cost):
+    if a not in costs_per_age:
+        costs_per_age[a] = 0
+    try:
+        costs_per_age[a] += float(q)
+    except ValueError:
+        print(f"Unable to convert {q} to float.")
+age_with_the_highest_cost = max(costs_per_age, key=costs_per_age.get )
+print("The age with the highest costs is: " + str(round(float(age_with_the_highest_cost))))
 
